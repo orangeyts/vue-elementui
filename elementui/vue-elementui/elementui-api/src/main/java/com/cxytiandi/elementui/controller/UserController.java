@@ -31,7 +31,7 @@ public class UserController {
 			return ResponseData.fail("密码不能为空", ResponseCode.PARAM_ERROR_CODE.getCode());
 		}
 		if (username.equals("admin") && password.equals("admin")) {
-			List<MenuVo> meuns = new ArrayList<>();
+			List<MenuVo> meuns = new ArrayList<MenuVo>();
 			MenuVo m = new MenuVo();
 			m.setIcon("el-icon-setting");
 			m.setIndex("/home");
@@ -49,7 +49,7 @@ public class UserController {
 			m2.setSubs(Arrays.asList(m3));
 			meuns.add(m2);
 			
-			Map<String, Object> result = new HashMap<>();
+			Map<String, Object> result = new HashMap<String, Object>();
 			result.put("token", JWTUtils.getToken("1001"));
 			result.put("meuns", meuns);
 			result.put("routers", "/home_/users");
@@ -57,7 +57,7 @@ public class UserController {
 		}
 		
 		if (username.equals("root") && password.equals("root")) {
-			List<MenuVo> meuns = new ArrayList<>();
+			List<MenuVo> meuns = new ArrayList<MenuVo>();
 			MenuVo m = new MenuVo();
 			m.setIcon("el-icon-setting");
 			m.setIndex("/home");
@@ -79,7 +79,7 @@ public class UserController {
 			m2.setSubs(Arrays.asList(m3, m4));
 			meuns.add(m2);
 			
-			Map<String, Object> result = new HashMap<>();
+			Map<String, Object> result = new HashMap<String, Object>();
 			result.put("token", JWTUtils.getToken("1002"));
 			result.put("meuns", meuns);
 			result.put("routers", "/home_/users_/user/info");
@@ -111,7 +111,7 @@ public class UserController {
 			users = new ArrayList<UserVo>();
 			users.add(new UserVo(111, "王小虎111", "上海市普陀区金沙江路 1518 弄", "2016-05-02"));
 		}
-		Map<String, Object> result = new HashMap<>();
+		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("list", users);
 		result.put("currentPage", page);
 		result.put("total", 19);
